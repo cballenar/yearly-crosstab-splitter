@@ -36,7 +36,7 @@ deno run split my-file.csv ./my-output
 ## Usage as Module
 
 ```typescript
-import splitCrosstabData from "./main.ts";
+import splitCrosstabData from "https://raw.githubusercontent.com/cballenar/yearly-crosstab-splitter/master/main.ts";
 
 // Import file.
 const inputFile = Deno.readFileSync("my-file.csv");
