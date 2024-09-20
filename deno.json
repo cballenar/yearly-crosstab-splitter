@@ -1,0 +1,5 @@
+{
+  "tasks": {
+    "parse": "deno run --allow-read --allow-write ./main.ts ./data.csv"
+  }
+}
