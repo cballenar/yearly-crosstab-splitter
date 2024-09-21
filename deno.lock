@@ -3,8 +3,10 @@
   "packages": {
     "specifiers": {
       "jsr:@std/assert": "jsr:@std/assert@1.0.5",
+      "jsr:@std/assert@1": "jsr:@std/assert@1.0.5",
       "jsr:@std/bytes@^1.0.2": "jsr:@std/bytes@1.0.2",
       "jsr:@std/csv": "jsr:@std/csv@1.0.3",
+      "jsr:@std/csv@1": "jsr:@std/csv@1.0.3",
       "jsr:@std/internal@^1.0.3": "jsr:@std/internal@1.0.3",
       "jsr:@std/streams@^1.0.4": "jsr:@std/streams@1.0.5"
     },

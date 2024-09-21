@@ -1,4 +1,4 @@
-import { parse, stringify } from "jsr:@std/csv";
+import { parse, stringify } from "jsr:@std/csv@1";
 
 export type SplitCrosstabDataResults = Map<
   string,
