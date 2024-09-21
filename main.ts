@@ -1,5 +1,14 @@
 import { parse, stringify } from "jsr:@std/csv";
 
+export type SplitCrosstabDataResults = Map<
+  string,
+  {
+    [year: number]: {
+      [metric: string]: string;
+    };
+  }
+>;
+
 /**
  * Splits a CSV file containing crosstab data into multiple CSV files.
  *
@@ -13,7 +22,7 @@ import { parse, stringify } from "jsr:@std/csv";
  */
 export default function splitCrosstabData(
   data: string[][]
-): Map<string, { [year: number]: { [metric: string]: string } }> {
+): SplitCrosstabDataResults {
   // Get headers from first row.
   const headers = data[0];
 
@@ -34,10 +43,7 @@ export default function splitCrosstabData(
   }, [] as number[]);
 
   // Define dimension data.
-  const dimensionData = new Map<
-    string,
-    { [year: number]: { [metric: string]: string } }
-  >();
+  const splitData: SplitCrosstabDataResults = new Map();
 
   // Parse remaining rows as dimensions.
   for (let i = 1; i < data.length; i++) {
@@ -45,7 +51,7 @@ export default function splitCrosstabData(
     const mainDimension = row[0];
 
     // If dimension data does not exist, create it.
-    if (!dimensionData.has(mainDimension)) dimensionData.set(mainDimension, {});
+    if (!splitData.has(mainDimension)) splitData.set(mainDimension, {});
 
     // Parse each year data into dimension data.
     for (const year of years) {
@@ -53,11 +59,11 @@ export default function splitCrosstabData(
       for (const part of subDimensions) {
         yearData[part] = row[headers.indexOf(`${year} ${part}`)];
       }
-      dimensionData.get(mainDimension)![year] = yearData;
+      splitData.get(mainDimension)![year] = yearData;
     }
   }
 
-  return dimensionData;
+  return splitData;
 }
 
 /**
