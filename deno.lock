@@ -2,11 +2,19 @@
   "version": "3",
   "packages": {
     "specifiers": {
+      "jsr:@std/assert": "jsr:@std/assert@1.0.5",
       "jsr:@std/bytes@^1.0.2": "jsr:@std/bytes@1.0.2",
       "jsr:@std/csv": "jsr:@std/csv@1.0.3",
+      "jsr:@std/internal@^1.0.3": "jsr:@std/internal@1.0.3",
       "jsr:@std/streams@^1.0.4": "jsr:@std/streams@1.0.5"
     },
     "jsr": {
+      "@std/assert@1.0.5": {
+        "integrity": "e37da8e4033490ce613eec4ac1d78dba1faf5b02a3f6c573a28f15365b9b440f",
+        "dependencies": [
+          "jsr:@std/internal@^1.0.3"
+        ]
+      },
       "@std/bytes@1.0.2": {
         "integrity": "fbdee322bbd8c599a6af186a1603b3355e59a5fb1baa139f8f4c3c9a1b3e3d57"
       },
@@ -16,6 +24,9 @@
           "jsr:@std/streams@^1.0.4"
         ]
       },
+      "@std/internal@1.0.3": {
+        "integrity": "208e9b94a3d5649bd880e9ca38b885ab7651ab5b5303a56ed25de4755fb7b11e"
+      },
       "@std/streams@1.0.5": {
         "integrity": "74e5c73d7d68eeab0d7fba3b05cbee3ba4ac5ae37c5f4e675f67e62f8f53edc4",
         "dependencies": [
@@ -24,5 +35,7 @@
       }
     }
   },
-  "remote": {}
+  "remote": {
+    "https://raw.githubusercontent.com/cballenar/yearly-crosstab-splitter/master/main.ts": "7ac8d57c1662ec4cebd926aaa95b9ed4985812eab3578481ce22a13208b60371"
+  }
 }

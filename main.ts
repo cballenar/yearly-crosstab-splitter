@@ -28,6 +28,7 @@ export default function splitCrosstabData(
 
   // Detect the repeating parts of the headers
   const subDimensions = headers.slice(1).reduce((acc, header) => {
+    // This assumes that the header is in the format "[Year] [Metric Name]".
     const parts = header.split(" ");
     const metric = parts.slice(1).join(" ");
     if (!acc.includes(metric)) acc.push(metric);

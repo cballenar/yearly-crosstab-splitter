@@ -49,3 +49,7 @@ const splitData = splitCrosstabData(data);
 
 // Work with data...
 ```
+
+## About
+
+Started as a simple script for splitting a repeating case. It then turned into a way to learn more about Deno and its module system.

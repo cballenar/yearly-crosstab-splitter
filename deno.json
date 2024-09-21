@@ -1,4 +1,12 @@
 {
+  "name": "@cballenar/yearly-crosstab-splitter",
+  "version": "1.0.0",
+  "description": "Splits crosstab data into object with sub-objects named after each main dimension (first columnn).",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cballenar/yearly-crosstab-splitter.git"
+  },
+  "exports": "./main.ts",
   "tasks": {
     "split": "deno run --allow-read --allow-write ./main.ts"
   }
