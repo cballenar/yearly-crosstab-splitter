@@ -1,5 +1,8 @@
 import { parse, stringify } from "jsr:@std/csv@1";
 
+/**
+ * A map of each main dimension (first item of arrays) with their respective data tabulated by year and metric.
+ */
 export type SplitCrosstabDataResults = Map<
   string,
   {
@@ -10,15 +13,10 @@ export type SplitCrosstabDataResults = Map<
 >;
 
 /**
- * Splits a CSV file containing crosstab data into multiple CSV files.
+ * Splits an array of crosstab data into a SplitCrosstabDataResults map.
  *
- * @param inputFilePath - The path to the input CSV file.
- *
- * The input CSV file is expected to have the following axis:
- * - Main Dimension column, e.g., States.
- * - Yearly columns for multiple dimensions, e.g., 1990 Red, 1990 Blue, 1991 Red, 1991 Blue, 1992...
- *
- * The output CSV files are saved in the "output" directory, with each file named after the main dimension.
+ * @param data An array of arrays containing crosstab data.
+ * @returns A map of each main dimension with their respective data tabulated.
  */
 export default function splitCrosstabData(
   data: string[][]
